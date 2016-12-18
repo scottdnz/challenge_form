@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/bootstrap/v3_3_7/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/generic.css') }}">
+        
+        <script src="{{ asset('bundles/app/js/jquery/v3_1_1/jquery.min.js') }}"></script> 
+        <script src="{{ asset('bundles/app/js/chart/v2_4_0/moment.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/chart/v2_4_0/Chart.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/challenge_form.js') }}"></script>
+        
+        <title>Challenge Form</title>
+        
+    </head>
+    <body>
+    <div class="container">
+         <div class="row">
+          
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+            
+                <section id="banner">
+    				<div class="inner">
+    					<section>
+    						<h2>Challenge Form</h2>
+    					</section>
+    					<section>
+    						<p>Please choose a server below to get its statistics.</p>
+    					</section>
+    				</div>
+    			</section>
+    			
+                <form id="frmChallenge" name="frmChallenge">
+                    <br>        
+                    <p>Select a server</p>
+                    <div id="messageArea"></div>    
+                    <select id="selServer" name="selServer">
+                        <option value="placeholder" selected="selected">Please choose</option>
+                        {% for server in serverList %}
+                            <option value="{{ server }}">{{ server }}</option>
+                        {% endfor %}        
+                    </select>
+                    <br><br>
+                    <div id="confirmationArea"></div>
+                </form>
+                
+                <div id="chartBox" class="respondFull">
+                    <canvas id="chartServerList" width="600" height="450"></canvas>
+                </div>
+                
+             </div>
+             
+            <div class="col-sm-1"></div>
+         </div> 
+         
+
+
+    </div>
+
+    </body>
+</html>
