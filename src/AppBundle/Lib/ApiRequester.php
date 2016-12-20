@@ -17,6 +17,11 @@ use GuzzleHttp\Exception\RequestException;
  */
 class ApiRequester 
 {
+    private _urlEndPoint;
+    private _error;
+    private _jsonRequestedArr;
+    private _jsonResponseArr;
+
     function __construct() 
     {
         $this->_urlEndPoint = "";
